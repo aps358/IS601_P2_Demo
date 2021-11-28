@@ -1,6 +1,11 @@
 """Importing Calculator Class from calculator > calculator_simple.py for Testing"""
-
 from calculator.calculator_simple import Calculator
+
+
+def read_csv():
+    """ Read the data from the given file """
+    data = pd.read_csv("data/data.csv")
+    print(data)
 
 
 def test_calculator_result():
