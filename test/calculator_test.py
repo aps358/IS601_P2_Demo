@@ -2,18 +2,16 @@
 from calculator.calculator_simple import Calculator
 
 
-def read_csv():
-    """ Read the data from the given file """
-    data = pd.read_csv("data/data.csv")
-    print(data)
-
-
 def test_calculator_result():
     """ To check if calculator initial result is 0 """
     # Arrange
     calc_obj = Calculator()
 
-    assert calc_obj.get_result() == 0
+    # Act
+    result = calc_obj.get_result()
+
+    # Assert
+    assert result == 0
 
 
 def test_calculator_add():
