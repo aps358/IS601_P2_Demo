@@ -36,13 +36,6 @@ class Calculator:
         return len(Calculator.history)
 
     @staticmethod
-    def add_nums(value_a, value_b):
-        """ Adds given two numbers and appends the result to history """
-        addition = Addition.create(value_a, value_b).getresult()
-        Calculator.add_calculation_to_history(addition)
-        return Calculator.get_last_calculation_added()
-
-    @staticmethod
     def subtract_nums(value_a, value_b):
         """ Subtracts given two numbers and appends the result to history """
         subtraction = Subtraction.create(value_a, value_b).getresult()

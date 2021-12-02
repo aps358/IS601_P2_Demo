@@ -1,7 +1,7 @@
 """Importing Calculator Class from calculator > main.py for Testing"""
-import pprint
 import pytest
 from calculator.main import Calculator
+import pandas as pd
 
 
 # This is called a fixture and it runs each time you pass it to a test
@@ -17,10 +17,13 @@ def test_calculator_add(clear_history):
     assert Calculator.add_nums(10, 20) == 30
     assert Calculator.add_nums(20, 20) == 40
     assert Calculator.add_nums(20, 30) == 50
-    assert Calculator.add_nums(30, 40) == 70
+    assert Calculator.add_nums(30.0, 40.0, 20.0) == 90.0
     assert Calculator.get_calculation_count() == 4
     assert Calculator.get_first_calculation_history() == 30
-    pprint.pprint(Calculator.history)
+
+def test_calculator_add(clear_history):
+    # pylint: disable=unused-argument,redefined-outer-name
+    assert Calculator.add_nums
 
 
 def test_calculator_subtract(clear_history):
@@ -28,7 +31,6 @@ def test_calculator_subtract(clear_history):
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculator.subtract_nums(10, 20) == -10
     assert Calculator.get_calculation_count() == 1
-    pprint.pprint(Calculator.history)
 
 
 def test_calculator_multiply(clear_history):
@@ -36,7 +38,6 @@ def test_calculator_multiply(clear_history):
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculator.multiply_nums(10, 20) == 200
     assert Calculator.get_calculation_count() == 1
-    pprint.pprint(Calculator.history)
 
 
 def test_calculator_divide(clear_history):
@@ -44,4 +45,3 @@ def test_calculator_divide(clear_history):
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculator.divide_nums(20, 20) == 1
     assert Calculator.get_calculation_count() == 1
-    pprint.pprint(Calculator.history)
